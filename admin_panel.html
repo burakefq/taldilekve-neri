@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yönetici Paneli - İDÖ Platformu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <div class="container admin-panel-container">
+        <div class="panel-header">
+            <h1 class="panel-title">Yönetici Paneli</h1>
+            <button id="logoutButton" class="logout-btn">Çıkış Yap <i class="fas fa-sign-out-alt"></i></button>
+        </div>
+
+        <p id="panelMesaj" class="mesaj"></p>
+
+        <div id="loadingStatus">
+            <p>Veriler Yükleniyor... Lütfen Bekleyiniz.</p>
+        </div>
+
+        <div class="table-responsive">
+            <table id="onerilerTable">
+                <thead>
+                    <tr>
+                        <th>Tarih</th>
+                        <th>Tür</th>
+                        <th>Konu</th>
+                        <th>Başlık</th>
+                        <th>Gönderen</th>
+                        <th>Açıklama</th>
+                        <th>Durum</th>
+                        <th>İşlem</th>
+                    </tr>
+                </thead>
+                <tbody id="onerilerTableBody">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="detailModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="modalTitle">Öneri Detayları</h2>
+            <hr>
+            <p><strong>Tür:</strong> <span id="modalTur"></span></p>
+            <p><strong>Konu:</strong> <span id="modalKonu"></span></p>
+            <p><strong>Başlık:</strong> <span id="modalBaslik"></span></p>
+            <p><strong>Gönderen:</strong> <span id="modalGonderen"></span></p>
+            <p><strong>Tarih:</strong> <span id="modalTarih"></span></p>
+            <hr>
+            <p><strong>Açıklama:</strong></p>
+            <p id="modalAciklama" style="white-space: pre-wrap;"></p>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+
+    <script src="admin_panel_script.js"></script>
+</body>
+</html>

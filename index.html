@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torbalı Anadolu Lisesi - İDÖ Platformu</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div id="splashScreen">
+
+        <div class="logo-group">
+            <div class="logo-container">
+                <img src="logo.png" alt="Okul Logosu" class="school-logo">
+            </div>
+
+            <div class="tal-container">
+                <img src="tal.png" alt="Torbalı Anadolu Lisesi Logosu" class="tal-logo">
+            </div>
+        </div>
+
+        <h1 class="splash-title">Torbalı Anadolu Lisesi</h1>
+        <p class="splash-subtitle">İstek, Dilek ve Öneri Platformu <br> 10/E Burak Efe Tarafından Geliştirildi</p>
+        <div class="loading-bar"></div>
+    </div>
+
+    <div class="content-wrapper" id="mainContent">
+
+        <a href="admin_login.html" class="admin-login-btn" title="Yönetici Paneline Git">
+            <i class="fas fa-lock"></i>
+        </a>
+
+        <div class="container">
+            <header>
+                <h2>Torbalı Anadolu Lisesi</h2>
+                <h1>İstek, Dilek ve Öneri Formu</h1>
+            </header>
+
+            <form id="idoForm">
+
+                <div class="form-group" style="animation-delay: 0.1s;">
+                    <label for="tur">1. Form Tipi Seçiniz:</label>
+                    <select id="tur" name="tur" required>
+                        <option value="" disabled selected>— Seçim Yapın —</option>
+                        <option value="İstek">İstek (Yapılmasını İstediğiniz Şey)</option>
+                        <option value="Dilek">Dilek (Temenni ve Ümit)</option>
+                        <option value="Öneri">Öneri (Geliştirme Fikri)</option>
+                    </select>
+                </div>
+
+                <div class="form-group" style="animation-delay: 0.2s;">
+                    <label for="konu">2. Konu Alanı:</label>
+                    <select id="konu" name="konu" required>
+                        <option value="" disabled selected>— Konu Seçimi —</option>
+                        <option value="Kantin ve Yemekhane">Kantin ve Yemekhane</option>
+                        <option value="Temizlik ve Hijyen">Temizlik ve Hijyen</option>
+                        <option value="Eğitim Kalitesi">Eğitim Kalitesi</option>
+                        <option value="Sosyal ve Kültürel Etkinlikler">Sosyal ve Kültürel Etkinlikler</option>
+                        <option value="Fiziki Şartlar ve Onarım">Fiziki Şartlar ve Onarım (Sınıf, tuvalet vb.)</option>
+                        <option value="Diğer">Diğer (Lütfen Açıklamada Belirtiniz)</option>
+                    </select>
+                </div>
+
+                <div class="form-group" style="animation-delay: 0.3s;">
+                    <label for="baslik">3. Konu Başlığı (Kısa):</label>
+                    <input type="text" id="baslik" name="baslik" placeholder="Örn: Kantin Fiyatları, Spor Salonu..." required maxlength="70">
+                </div>
+
+                <div class="form-group" style="animation-delay: 0.4s;">
+                    <label for="aciklama">4. Detaylı Açıklama (Nedenleriniz ve Çözüm Önerileriniz):</label>
+                    <textarea id="aciklama" name="aciklama" rows="6" placeholder="Detaylı düşüncelerinizi buraya yazınız." required></textarea>
+                </div>
+
+                <hr class="separator">
+
+                <div class="form-group" style="animation-delay: 0.5s;">
+                    <label for="gonderenAd">5. İsim/Soyisim (İsteğe Bağlı):</label>
+                    <input type="text" id="gonderenAd" name="gonderenAd" placeholder="Adınız Soyadınız (İsteğe bağlı)">
+                </div>
+
+                <div class="checkbox-group form-group" style="animation-delay: 0.6s;">
+                    <input type="checkbox" id="anonim" name="anonim" checked>
+                    <label for="anonim">Anonim olarak göndermek istiyorum.</label>
+                </div>
+
+                <div class="checkbox-group form-group" style="animation-delay: 0.7s;">
+                    <input type="checkbox" id="herkeseGozuksun" name="herkeseGozuksun">
+                    <label for="herkeseGozuksun">Önerim, diğer öğrencilerin de görmesi için yayınlansın.</label>
+                </div>
+                <div class="form-group" style="animation-delay: 0.8s;">
+                    <button type="submit" id="gonderButton">GÖNDER</button>
+                </div>
+
+                <p id="mesaj" class="mesaj"></p>
+
+            </form>
+
+            <a href="yayinlanan_oneriler.html" class="yayinlanan-oneriler-link" style="
+                display: block;
+                text-align: center;
+                margin-top: 20px;
+                padding: 10px;
+                font-weight: 600;
+                color: var(--primary-color);
+                border: 2px solid var(--primary-color);
+                border-radius: 8px;
+                transition: background-color 0.3s, color 0.3s;
+            ">
+                Yayınlanan Öğrenci Önerilerini Gör 👁️
+            </a>
+            </div>
+
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>

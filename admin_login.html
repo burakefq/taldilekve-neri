@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yönetici Girişi - İDÖ Platformu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-body">
+
+    <div class="container admin-container">
+        <header>
+            <h1 class="admin-title">Yönetici Girişi</h1>
+            <p>Okul İstek, Dilek ve Öneri Yönetim Paneli</p>
+        </header>
+
+        <form id="adminLoginForm">
+
+            <div class="form-group">
+                <label for="adminEmail">E-Posta:</label>
+                <input type="email" id="adminEmail" name="adminEmail" placeholder="Yönetici E-Posta Adresi" required>
+            </div>
+
+            <div class="form-group">
+                <label for="adminPassword">Şifre:</label>
+                <input type="password" id="adminPassword" name="adminPassword" placeholder="Şifre" required>
+            </div>
+
+            <button type="submit" id="loginButton">GİRİŞ YAP</button>
+
+            <p id="mesajAdmin" class="mesaj"></p>
+
+        </form>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+
+    <script src="admin_login_script.js"></script>
+</body>
+</html>
